@@ -8,7 +8,7 @@ function App() {
   const [cursor, setCursor] = useState(0)
   const ref = useRef(null)
 
-  const calculatePosition = (position: number | null) => Math.min(position ?? 0, 22) * 10
+  const calculatePosition = (position: number | null) => Math.min(position ?? 0, 22) * 9.6
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValue(event.target.value)
