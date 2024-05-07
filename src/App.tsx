@@ -28,7 +28,11 @@ function App() {
   const handleFocus = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (event.target.value === '') return setShow(false)
     setCursor(calculatePosition(event.target.selectionStart))
-    setShow(true)
+
+    // TODO: Remove this setTimeout
+    setTimeout(() => {
+      setShow(true)
+    }, 100)
   }
 
   return (
@@ -41,6 +45,7 @@ function App() {
           ref={ref}
           value={value}
           onChange={handleChange}
+          onClick={handlePosition}
           onKeyDown={handlePosition}
           onFocus={handleFocus}
           onBlur={() => setShow(false)}
